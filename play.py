@@ -10,10 +10,14 @@ Slot markers are denoted as - 'x' and 'o'
 player = 1
 game_over = False
 board = [False] * 10
+computer_opponent = play_agiainst_computer()
 players = get_player_marker_choice()
 
 while not game_over:
-    position = get_slot_choice(board)
+    position = get_slot_choice(
+        board,
+        True if computer_opponent and player != 1 else False
+    )
 
     # Get the marker for the player
     marker = players[swtich_player.get(player)]
